@@ -1,0 +1,1887 @@
+*, input, button, select, textarea {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden; /* Stops any unwanted side-to-side page shaking */
+  background-color: #F5F5F5; /* Optional: adds a clean gray backdrop behind your mobile view */
+}
+
+.app-container {
+  width: 100%;
+  max-width: 428px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.blob-header {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 856 / 440;
+}
+
+.blob-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.header-text {
+  position: absolute;
+  top: 28%;
+  left: 6%;
+  right: 10%;
+  z-index: 2;
+}
+
+.eyebrow-text {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: clamp(16px, 4.4vw, 19px);
+  margin: 0 0 2px 0;
+  letter-spacing: 0.2px;
+}
+
+.headline-text {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: clamp(34px, 11.2vw, 48px);
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.app-form {
+  padding: 44px 48px 32px;
+}
+
+.field-group {
+  margin-bottom: 18px;
+}
+
+.name-row {
+  display: flex;
+  gap: 14px;
+}
+
+.name-row .input-field {
+  flex: 1;
+  min-width: 0;
+}
+
+.input-field {
+  width: 100%;
+  padding: 13px 20px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #333333;
+  background: #ffffff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field::placeholder {
+  color: #828282;
+}
+
+.input-field:focus {
+  border-color: #f57c00;
+  box-shadow: 0 0 0 3px rgba(245, 124, 0, 0.12);
+}
+
+.input-field.error {
+  border-color: #e53935;
+  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.1);
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 4px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #f28500;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.primary-btn:hover {
+  background: #e07a00;
+}
+
+.primary-btn:active {
+  transform: scale(0.98);
+  background: #d67200;
+}
+
+.primary-btn:disabled {
+  opacity: 0.75;
+  cursor: default;
+}
+
+.switch-text {
+  margin: 48px 0 0 0;
+  text-align: center;
+  font-size: 14.5px;
+  color: #828282;
+}
+
+.switch-link {
+  color: #ffbf00;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.switch-link:hover {
+  color: #e6ac00;
+}
+
+.terms-text {
+  margin: 48px 0 0 0;
+  padding: 0 12px;
+  text-align: center;
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: #828282;
+}
+
+.terms-link {
+  color: #000000;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 360px) {
+  .app-form {
+    padding: 36px 32px 28px;
+  }
+
+  .name-row {
+    gap: 10px;
+  }
+}
+
+.option-screen {
+  position: relative;
+  background-color: #F4F4F6; /* Matches the soft light gray UI background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Keeps the decorative circles from causing scrollbars */
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Center Content Wrapper */
+.options-content {
+  text-align: center;
+  z-index: 10; /* Keeps text and buttons above background circles */
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Central Text Prompt */
+.options-message {
+  color: #555555;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+/* Button Layout Horizontal Flex */
+.options-btn-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* Shared Button Design */
+.option-btn {
+  background: #F57C00; /* Primary brand orange */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1; /* Ensures both buttons scale dynamically and equally */
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.option-btn:hover {
+  background: #E66A00;
+}
+
+.option-btn:active {
+  transform: scale(0.98);
+}
+
+
+/* ==========================================
+   Decorative Background Circles (Gradients)
+   ========================================== */
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFD65C 0%, #FFC107 30%, #FCA000 65%, #F57C00 100%);
+  pointer-events: none; /* Allows user clicks to pass through circles if overlapping */
+}
+
+/* --- Top Left Corner Group --- */
+.tl-1 {
+  width: 180px;
+  height: 180px;
+  top: -60px;
+  left: 120px;
+}
+
+.tl-2 {
+  width: 140px;
+  height: 140px;
+  top: -40px;
+  left: -50px;
+}
+
+.tl-3 {
+  width: 110px;
+  height: 110px;
+  top: 90px;
+  left: 40px;
+}
+
+.tl-4 {
+  width: 35px;
+  height: 35px;
+  top: 120px;
+  left: 190px;
+}
+
+/* --- Bottom Right Corner Group --- */
+.br-1 {
+  width: 320px;
+  height: 320px;
+  bottom: 100px;
+  right: -120px;
+}
+
+.br-2 {
+  width: 110px;
+  height: 110px;
+  bottom: 80px;
+  right: 120px;
+}
+
+.br-3 {
+  width: 180px;
+  height: 180px;
+  bottom: -70px;
+  right: 20px;
+}
+
+.join-school-screen {
+  background-color: #F4F4F6; /* Matches the soft off-white UI base */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 24px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Constrains content width and left-aligns the elements internally */
+.join-content-wrapper {
+  width: 100%;
+  max-width: 360px; /* Aligns with standard mobile UI element boundaries */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Stacked text header styling */
+.join-heading {
+  font-size: 4.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 35px 0;
+  letter-spacing: -1px;
+}
+
+/* Distinct color markers from the brand gradient */
+.text-yellow {
+  color: #FFC107; /* Bright warm gold */
+}
+
+.text-orange {
+  color: #F57C00; /* Rich brand orange */
+}
+
+/* Descriptive Paragraph */
+.join-description {
+  color: #616161;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.45;
+  margin: 0 0 25px 0;
+}
+
+/* Form structure adjustments */
+.join-form {
+  width: 100%;
+}
+
+/* Input layout changes for pixel-match */
+.dynamic-input {
+  width: 100%;
+  padding: 16px;
+  font-size: 1rem;
+  border: 1px solid #D1D1D6;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.dynamic-input::placeholder {
+  color: #9E9E9E;
+}
+
+/* Full width submission button */
+.wide-btn {
+  width: 100%;
+  background: #F57C00;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.wide-btn:hover {
+  background: #E66A00;
+}
+
+.register-school-screen {
+  background-color: #F4F4F6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Allows seamless top down standard layout flow during overflow scroll */
+  padding: 40px 24px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.register-content-wrapper {
+  width: 100%;
+  max-width: 380px; /* Aligns comfortably with standardized layout guidelines */
+  display: flex;
+  flex-direction: column;
+}
+
+.register-heading {
+  font-size: 4.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 25px 0;
+  letter-spacing: -1px;
+}
+
+.register-description {
+  color: #616161;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.45;
+  margin: 0 0 20px 0;
+}
+
+.yellow-divider {
+  border: none;
+  border-top: 1px solid #FFD65C;
+  margin: 0 0 30px 0;
+  width: 100%;
+}
+
+/* Form Headings */
+.section-title {
+  color: #666666;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 25px 0 15px 0;
+}
+
+/* Individual Form Standard Configuration elements */
+.basic-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  border: 1px solid #D1D1D6;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  outline: none;
+  color: #333333;
+}
+
+.basic-input::placeholder {
+  color: #9E9E9E;
+}
+
+/* Symmetrical Layout Flex Components */
+.form-row {
+  margin-bottom: 16px;
+  min-height: 45px;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row-label {
+  color: #757575;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+/* Custom Checkbox/Radio Styling elements */
+.radio-group {
+  display: flex;
+  gap: 16px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #757575;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* Hides native raw HTML structure styling checkboxes */
+.radio-label input[type="radio"] {
+  display: none;
+}
+
+.custom-radio {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #D1D1D6;
+  border-radius: 50%;
+  background-color: #E5E5EA;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.radio-label input[type="radio"]:checked + .custom-radio {
+  background-color: #F57C00;
+  border-color: #F57C00;
+}
+
+/* Selector dropdown wrapper styling */
+.select-wrapper {
+  width: 60%;
+  position: relative;
+}
+
+.dropdown-select {
+  width: 100%;
+  padding: 12px 30px 12px 12px;
+  font-size: 0.95rem;
+  border: 1px solid #D1D1D6;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  appearance: none; /* Strip browser native overlay arrow handles */
+  outline: none;
+  color: #333333;
+  cursor: pointer;
+}
+
+/* Pure CSS custom chevron indicator overlay styling handles */
+.select-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-30%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid #BDBDBD;
+  pointer-events: none;
+}
+
+/* === Document Upload Field Configuration Rules === */
+.upload-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.upload-btn {
+  background-color: #FFFDE7;
+  border: 1px solid #FFC107;
+  color: #F57C00;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.upload-btn input[type="file"] {
+  display: none;
+}
+
+.upload-label {
+  color: #757575;
+  font-size: 0.9rem;
+}
+
+.upload-note {
+  color: #9E9E9E;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin: 10px 0 20px 0;
+}
+
+/* === Bottom Linked Email Group Rules === */
+.text-group-wrapper {
+  margin-bottom: 16px;
+}
+
+.field-sublabel {
+  display: block;
+  color: #757575;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.flex-row-space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-field-link {
+  color: #F57C00;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Footer Primary Element Form Button */
+.submit-registration-btn {
+  width: 100%;
+  background: #F57C00;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.submit-registration-btn:hover {
+  background: #E66A00;
+}
+
+.secondary-btn {
+  width: 100%;
+  background-color: #FFFDE7; /* Light warm tint */
+  color: #F57C00; /* Matching brand orange text */
+  border: 2px dashed #FFC107; /* Eye-catching dashed yellow line */
+  border-radius: 8px;
+  padding: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background-color: #FFF9C4;
+  border-color: #F57C00;
+}
+
+.scrollable-container {
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 30px 24px;
+  background-color: #F5F5F5;
+}
+
+/* Big Typography Headers */
+.giant-yellow-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 4rem;
+  color: #FFC107;
+  line-height: 0.95;
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
+.giant-orange-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: #F57C00;
+  line-height: 0.95;
+  margin-bottom: 15px;
+}
+
+.instruction-text {
+  font-family: 'Poppins', sans-serif;
+  color: #555555;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.header-desc {
+  font-family: 'Poppins', sans-serif;
+  color: #666666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.header-divider {
+  border: none;
+  border-top: 2px solid #FFD65C;
+  margin: 20px 0 30px 0;
+}
+
+/* Structural Fieldsets for Registry Organization */
+.form-section {
+  border: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #666666;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.field-sub-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  color: #888888;
+  display: block;
+  margin: 10px 0 5px 0;
+}
+
+/* Radio Button Layouts */
+.inline-radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #777777;
+  margin: 15px 0;
+}
+
+.radio-label {
+  color: #666666;
+  margin-right: 10px;
+}
+
+/* Native Custom Dropdowns Layout */
+.select-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.select-wrapper::after {
+  content: '▼';
+  font-size: 0.7rem;
+  color: #F57C00;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  pointer-events: none;
+}
+
+.select-field {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #777777;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Documents Verification Layout */
+.file-upload-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.upload-btn {
+  background-color: #FFF9E6;
+  border: 1px solid #FFD65C;
+  color: #FCA000;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.file-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  color: #777777;
+}
+
+.file-note {
+  font-size: 0.72rem;
+  color: #999999;
+  line-height: 1.4;
+  margin-top: 5px;
+}
+
+/* Auxiliary Inner Label with Actions */
+.label-with-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inline-action-btn {
+  background: none;
+  border: none;
+  color: #FCA000;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.dynamic-top-margin {
+  margin-top: 20px;
+}
+
+.dashboard-container {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;    /* Allow the layout container to stretch down naturally */
+  height: auto;         /* Remove any rigid fixed height locks */
+  overflow-x: hidden;   /* Keeps background decorative orbs safely clipped */
+  
+  padding: 0 !important; 
+}
+
+.dashboard-hero {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  /* Premium dark glass overlay on top of a community background photo */
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.5)), 
+              url('https://www.catholicmom.com/hs-fs/hubfs/20210924%20CLappe%202.png?width=1080&name=20210924%20CLappe%202.png') center/cover no-repeat;
+  
+  /* 💡 THE FIX: Make padding even on all sides so it doesn't off-center your content */
+  padding: 24px; 
+  
+  display: flex;
+  /* 💡 THE FIX: Centers the items perfectly vertical (instead of flex-end) */
+  align-items: center;     
+  /* Keeps the items centered horizontally */
+  justify-content: center; 
+  gap: 16px;               
+  
+  box-sizing: border-box;
+}
+
+/* Floating Top-Right Gear Button */
+.settings-btn {
+  position: absolute;
+  top: 45px;
+  right: 24px;
+  background: transparent; /* 💡 CHANGED: Removes the white background color */
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;        /* 💡 CHANGED: Removes the circular shadow outline */
+  transition: transform 0.2s ease;
+}
+
+.settings-btn svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.settings-btn:hover {
+  transform: rotate(45deg);
+}
+
+/* Profile Row Structure */
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-avatar-wrapper {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid #FFA000; /* Warm golden signature border */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  /* High-quality default avatar fallback illustration matching user styling */
+  background: #FFB74D url('https://api.dicebear.com/7.x/bottts/svg?seed=Akito') center/cover no-repeat;
+}
+
+/* Header Text Fonts */
+.greeting-text-container {
+  color: #FFFFFF;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.greeting-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.greeting-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: -2px 0 0 0;
+  letter-spacing: -0.5px;
+}
+
+/* --- Interactive Search Section --- */
+.search-section {
+  padding: 20px 24px 10px 24px;
+  background-color: #FFFFFF;
+  margin-top: -20px; /* Pulls block up over hero background */
+  border-radius: 24px 24px 0 0; /* Creates beautiful rounded panel overlap transition */
+  z-index: 10;
+  position: relative;
+}
+
+.search-bar-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.dashboard-search {
+  width: 100%;
+  padding: 14px 16px 14px 52px;
+  border: 1.5px solid #FFD65C; /* Pastel yellow border accent */
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #333333;
+  outline: none;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(255, 214, 92, 0.08);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-search:focus {
+  border-color: #F57C00;
+  box-shadow: 0 4px 12px rgba(245, 124, 0, 0.15);
+}
+
+/* --- Dashboard Scrollable Options Stack Panel --- */
+.menu-cards-stack {
+  flex: 1;
+  padding: 10px 24px 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative; 
+  background-color: #FFFFFF;
+}
+
+.menu-cards-stack::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  bottom: -50px;
+  right: -80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFA726, #FF6D00);
+  opacity: 0.8;
+  z-index: 1; 
+  pointer-events: none; 
+}
+
+.menu-cards-stack::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 25%;
+  left: -60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFCC80, #FFA000);
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Option Row Card Modules */
+.menu-card {
+  display: flex;
+  align-items: center;
+  background-color: #FFF5E9; /* Exact soft warm cream fill color */
+  border: 1.5px solid #FFAA44; /* Defined amber border outline stroke */
+  border-radius: 40px;       /* High roundness/pill shape matching the mockup */
+  padding: 20px 28px;
+  gap: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(224, 112, 0, 0.04);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  position: relative;
+  z-index: 2; 
+}
+
+.menu-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(245, 124, 0, 0.12);
+}
+
+/* Card Media Component Enclosure */
+.card-icon-box {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* Makes icon background seamlessly match the cream card */
+  box-shadow: none;        /* Removes old shadow bounding boxes */
+  flex-shrink: 0;
+}
+
+.card-icon-box svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Content Details Typography Rules */
+.card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FF7B00; /* Exact bold brand orange color */
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.card-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #8A8A8A; /* Clean gray readable text color */
+  margin: 3px 0 0 0;
+}
+
+.card-icon-box {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 50%; /* Keeps it a perfect circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 💡 Bumped inner image file from 34px to 44px */
+.card-img-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.report-header {
+  background-color: #fca311;
+  height: 60px;
+  
+  /* 🔑 Limits width and centers the orange block at the top */
+  max-width: 400px;        
+  width: 90%;              
+  margin: 15px auto 0;     
+  border-radius: 12px;     
+  
+  /* Keeps back button and text inline on the left side */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   
+  padding: 0 20px;                
+  box-sizing: border-box;
+}
+
+.back-arrow-link {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-right: 12px;             
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.header-title {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 21px;                
+  font-weight: 700;
+  margin: 0;
+}
+
+.report-screen-container {
+  background-color: #f7f7f7;
+  padding: 24px 16px;
+  min-height: calc(100vh - 60px);
+}
+.report-view-state {
+  width: 100%;
+}
+.screen-hidden {
+  display: none !important;
+}
+
+/* Form Styling */
+.report-label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666666;
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+.report-textarea {
+  width: 100%;
+  height: 180px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  resize: none;
+  background-color: #ffffff;
+  outline: none;
+}
+
+/* Dual Upload Grid */
+.evidence-upload-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.evidence-box {
+  background-color: #fffdf0; /* Soft light-yellow card fill */
+  border: 2px dashed #fca311; /* Dashed accent line border */
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+.evidence-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.evidence-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ca8a04;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Success Card Interface */
+.success-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 40px;
+}
+.success-checkmark-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #2ec4b6; /* Clean flat UI emerald green */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 16px rgba(46, 196, 182, 0.2);
+}
+.success-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #fca311;
+  margin-bottom: 16px;
+}
+.success-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.6;
+  max-width: 300px;
+  margin-bottom: 36px;
+}
+.anonymous-notice-badge {
+  display: flex;
+  align-items: center;
+  background-color: #fff3e0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+.badge-icon {
+  font-size: 16px;
+  margin-right: 8px;
+}
+.badge-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #e65100;
+  margin: 0;
+}
+
+.safety-screen-container {
+  background-color: #f7f7f7;   /* Soft gray screen background matching your mockup */
+  padding: 24px 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.safety-intro-text {
+  color: #666666;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0 auto 24px auto;
+  max-width: 280px;            /* Forces perfect text wrapping layout */
+}
+
+/* 📊 2-Column Responsive Resource Grid */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 18px;            /* Horizontal distance between card pairs */
+  row-gap: 22px;               /* Vertical distance between card rows */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 🎴 Clickable Interactive Card Layout */
+.resource-card {
+  background-color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  
+  /* The distinct clean orange outline frame */
+  border: 1.5px solid #fca311; 
+  border-radius: 16px;         /* Distinct smooth rounded card form */
+  overflow: hidden;            /* Perfectly masks the top image corners */
+  
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+  transition: transform 0.15s ease;
+}
+
+.resource-card:active {
+  transform: scale(0.98);      /* Tactile screen compression feedback when tapped */
+}
+
+.resource-card:hover {
+  transform: translateY(-2px); /* Adds a premium interactive floating feel */
+  box-shadow: 0 6px 16px rgba(252, 163, 17, 0.12);
+}
+
+/* 🖼️ Card Image Crop Wrapper */
+.card-image-wrapper {
+  width: 100%;
+  height: 135px;               /* Proportional grid card block height */
+  overflow: hidden;
+  background-color: #e5e7eb;
+}
+
+.resource-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* Fits your custom photos without skewing aspect ratios */
+  display: block;
+}
+
+/* 🏷️ Bottom Text Banner Block */
+.resource-card-label {
+  color: #4a4a4a;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;            /* Clean semi-bold display typography */
+  line-height: 1.3;
+  text-align: center;
+  
+  padding: 12px 6px;
+  min-height: 38px;            /* Keeps card structures uniform if strings wrap */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.desktop-bg-gray {
+  background-color: #f3f4f6;   /* Light gray backdrop for the desktop monitor area */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Simulated Smartphone Chassis Wrapper */
+.phone-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevents double scrollbars */
+}
+
+/* Top space buffer above the header */
+.status-bar-spacer {
+  background-color: #ffffff;
+  height: 14px;
+  width: 100%;
+}
+
+.contacts-screen-container {
+  background-color: #f7f7f7;   /* Matching layout backdrop gray */
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.contacts-intro-text {
+  color: #666666;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: left;
+  margin: 0 0 32px 0;
+  max-width: 320px;            /* Forces clean multi-line wrapping */
+}
+
+/* Field Structures */
+.contact-field-group {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.field-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.field-label {
+  color: #888888;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+.add-field-btn {
+  color: #fca311;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.add-field-btn:hover {
+  opacity: 0.8;
+}
+
+/* 📱 Inside the Custom Input Component Box */
+.input-container-box {
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;         /* Distinct soft curved container contour */
+  height: 52px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.input-container-box:focus-within {
+  border-color: #fca311;       /* Subtle brand accent highlighting on focus */
+}
+
+.input-icon-prefix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+}
+
+.vertical-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #e0e0e0;   /* Light grey indicator partition line */
+  margin: 0 14px;
+}
+
+.contact-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #333333;
+}
+
+/* 🟧 The Signature Solid Bottom Action Button */
+.contacts-save-btn {
+  background-color: #fca311;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 24px;
+  box-shadow: 0 4px 12px rgba(252, 163, 17, 0.15);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.contacts-save-btn:active {
+  transform: scale(0.99);      /* Click compression feedback */
+  background-color: #e5920f;
+}
+
+.toast-notification {
+  position: absolute;
+  bottom: 90px;                /* Floats just above your Save button */
+  left: 50%;
+  transform: translateX(-50%) translateY(15px); /* Pre-position shifted slightly downward */
+  
+  background-color: #2b2d42;   /* Sleek charcoal background */
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 12px 22px;
+  border-radius: 25px;         /* Creates a modern capsule pill profile */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), visibility 0.3s;
+  z-index: 999;
+}
+
+/* 🔥 Trigger Class: Slides up and fades into view smoothly */
+.toast-notification.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.modal-overlay {
+  position: absolute;          /* Anchors it inside the boundaries of your phone preview frame */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Translucent dimming filter behind popup window */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 2000;               /* Layered carefully above status bars and standard headers */
+  
+  /* Hidden states */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+/* 🔥 Show trigger class */
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Inside the Popup Frame Window Box */
+.modal-window {
+  background-color: #ffffff;
+  width: 100%;
+  max-height: 85%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+  
+  /* Smooth scale-up impact transition animation */
+  transform: scale(0.92);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+}
+
+.modal-overlay.show .modal-window {
+  transform: scale(1);
+}
+
+.modal-header {
+  background-color: #fca311;   /* Matches your signature app orange */
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 400;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.modal-body {
+  padding: 24px 20px;
+  overflow-y: auto;            /* Enables scroll bars if directions overflow smaller phone models */
+}
+
+/* Formatting individual lists */
+.instruction-step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.instruction-step:last-child {
+  margin-bottom: 0;
+}
+
+.step-number {
+  background-color: #fca311;
+  color: #ffffff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  margin-right: 14px;
+  flex-shrink: 0;              /* Stops the circle shape from distorting */
+  margin-top: 2px;
+}
+
+.step-text h4 {
+  margin: 0 0 4px 0;
+  color: #2b2d42;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.step-text p {
+  margin: 0;
+  color: #666666;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.gemini-header {
+  background: linear-gradient(135deg, #fca311 0%, #ffb703 100%);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-spark-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.gemini-main-title {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.gemini-confidentiality-notice {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11.5px;
+  color: #888888;
+  text-align: center;
+  margin: 14px 20px;
+  line-height: 1.4;
+}
+
+/* Chat Stream Box Container */
+.gemini-chat-stream {
+    padding-top: 20px; /* Moves the first message down */
+    padding-left: 15px;
+    padding-right: 15px;
+    flex: 1; 
+    overflow-y: auto;
+}
+
+.gemini-chat-stream::-webkit-scrollbar {
+  display: none; 
+}
+
+/* AI Elements Rows Positioning */
+.chat-row-ai {
+  display: flex;
+  justify-content: flex-start; /* Pushes bubble to the left */
+  width: 100%;
+  margin-bottom: 10px;
+  align-items: flex-start;
+}
+
+.follow-up-spacing {
+  margin-top: -10px;
+  padding-left: 32px; /* aligns clean text with card instead of repeating icons */
+}
+
+.stream-spark-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  margin-top: 6px;
+  object-fit: contain;
+}
+
+/* Rounded Box Containers matching your sample image */
+.chat-intake-card {
+  background-color: #ededed;
+  border-radius: 16px;
+  padding: 14px 14px;
+  width: 72%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+}
+
+.intake-question {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #444444;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+/* Crisp selection buttons inside options cards */
+.intake-choice-btn {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #555555;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 400;
+  transition: background-color 0.2s;
+}
+
+.intake-choice-btn:active {
+  background-color: #fca311;
+  color: #ffffff;
+}
+
+.chat-text-bubble {
+    background-color: #f1f3f4; /* A light, clean grey */
+    border-radius: 18px; /* Rounded corners */
+    padding: 12px 16px;
+    max-width: 80%; /* Limits width so it doesn't span the whole screen */
+    word-wrap: break-word;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #333;
+    border-top-left-radius: 4px; 
+}
+
+/* User Answers Flow Placement Layout */
+.chat-row-user {
+  display: flex;
+  justify-content: flex-end; /* Pushes bubble to the right */
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Elegant orange answers capsule placeholder on the right side */
+.user-reply-pill {
+  background-color: #ff9f1c; /* Your orange color */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px 15px 0 15px;
+  max-width: 70%; /* This prevents the stacking issue */
+  word-wrap: break-word; /* Ensures long words break correctly */
+  text-align: left; /* Keeps text readable */
+}
+
+.terminal-block {
+  min-height: 120px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+
+.gemini-placeholder-hint {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #aaaaaa;
+  text-align: center;
+  margin: 0;
+}
+
+/* Sticky Input Action Floating Footer Row */
+.gemini-input-container {
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #eee;
+    flex-shrink: 0; /* Prevents it from getting squished */
+}
+
+.gemini-input-pill-box {
+    display: flex;
+    align-items: flex-end; /* Keeps icons aligned to the bottom */
+    padding: 5px 10px;
+}
+
+.gemini-text-field {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-family: inherit;
+    resize: none; /* Disables the manual resize handle */
+    overflow: hidden; /* Hides the scrollbar as it grows */
+    min-height: 40px; /* Base height */
+    max-height: 150px; /* Prevents it from taking up the whole screen */
+    overflow-y: auto; /* Adds scrollbar only if it hits max-height */
+}
+
+.input-icon-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 4px;
+}
+
+.input-icon-actions svg {
+  cursor: pointer;
+  display: block;
+}
+
+body.gemini-view-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f4f4f7; /* Matches the desktop preview background color */
+  display: flex;
+  justify-content: center;   /* Centers the phone horizontally */
+  align-items: center;       /* Centers the phone vertically */
+}
+
+/* 2. Lock the phone frame dimensions so it doesn't stretch left-to-right */
+.gemini-view-body .phone-wrapper {
+  position: relative;
+  width: 375px;              /* Fixed smartphone width */
+  height: 812px;             /* Fixed smartphone height */
+  background-color: #ffffff; /* Internal phone background stays crisp white */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Gives it a realistic mockup depth */
+  border-radius: 32px;       /* Sleek modern rounded screen edges */
+  overflow: hidden;          /* Clips the header graphics nicely inside the viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-container {
+  flex: 1;                  /* Forces the area to expand and fill the blank phone screen */
+  overflow-y: auto;         /* Allows smooth scrolling once messages fill it up */
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #f4f4f7; /* Gives your clean app view a soft grey canvas */
+}
+
+.ai-option-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* The style for each button */
+.ai-option-btn {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.ai-option-btn:hover {
+    background-color: #f0f0f0;
+}
+
+@keyframes pulse-animation {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.thinking-bubble {
+    animation: pulse-animation 1.5s infinite ease-in-out;
+}

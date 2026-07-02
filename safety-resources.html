@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safety Resources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="SULO.css">
+</head>
+<body class="desktop-bg-gray">
+
+  <div class="phone-wrapper">
+    
+    <div class="status-bar-spacer"></div>
+
+    <header class="report-header">
+      <a href="home.html" class="back-arrow-link">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </a>
+      <h1 class="header-title">Safety Resources</h1>
+    </header>
+
+    <main class="safety-screen-container">
+      
+      <p class="safety-intro-text">
+        These emergency procedures will help you giving quick guides for:
+      </p>
+
+      <div class="resources-grid">
+        
+        <a href="#" id="activeThreatCard" class="resource-card">
+  <div class="card-image-wrapper">
+    <img src="active.png" alt="Active Threat" class="resource-card-img">
+  </div>
+  <div class="resource-card-label">Active Threat or Violence</div>
+</a>
+
+        <a href="#" id="fireEmergencyCard" class="resource-card">
+  <div class="card-image-wrapper">
+    <img src="safety-fire-extinguisher-foam-photo.jpg" alt="Fire Emergency" class="resource-card-img">
+  </div>
+  <div class="resource-card-label">Fire Emergency</div>
+</a>
+
+        <a href="#" id="earthquakeCard" class="resource-card">
+  <div class="card-image-wrapper">
+    <img src="yyyyyyyyyyy (1).jpg" alt="Earthquake" class="resource-card-img">
+  </div>
+  <div class="resource-card-label">Earthquake</div>
+</a>
+
+        <a href="#" id="medicalEmergencyCard" class="resource-card">
+  <div class="card-image-wrapper">
+    <img src="medical-kit.jpg" alt="Medical Emergency" class="resource-card-img">
+  </div>
+  <div class="resource-card-label">Medical Emergency</div>
+</a>
+
+        <a href="#" id="floodTyphoonCard" class="resource-card">
+  <div class="card-image-wrapper">
+    <img src="thethgbtg (1).jpg" alt="Flood and Typhoon" class="resource-card-img">
+  </div>
+  <div class="resource-card-label">Flood and Typhoon</div>
+</a>
+
+        <a href="#" id="evacuationCard" class="resource-card">
+  <div class="card-image-wrapper">
+    <img src="evacuation.jpg" alt="Evacuation Procedures" class="resource-card-img">
+  </div>
+  <div class="resource-card-label">Evacuation Procedures</div>
+</a>
+
+      <div id="threatModal" class="modal-overlay">
+      <div class="modal-window">
+        
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h2 class="modal-title">Active Threat Protocol</h2>
+          <button type="button" id="closeModalBtn" class="modal-close-btn">&times;</button>
+        </div>
+
+        <!-- Modal Instructions Content -->
+        <div class="modal-body">
+          
+          <div class="instruction-step">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <h4>RUN (Evacuate)</h4>
+              <p>If there is an escape path, attempt to evacuate immediately. Leave your belongings behind and keep your hands completely visible.</p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <h4>HIDE (Lockdown)</h4>
+              <p>If evacuation is impossible, find a secure room. Lock and barricade the door with heavy objects, turn off lights, and silence your smartphone completely.</p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <h4>FIGHT (Defend)</h4>
+              <p>As an absolute last resort, and only when your life is in imminent danger, attempt to disrupt or incapacitate the threat with physical aggression.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="fireModal" class="modal-overlay">
+      <div class="modal-window">
+        
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h2 class="modal-title">Fire Emergency Protocol</h2>
+          <button type="button" id="closeFireModalBtn" class="modal-close-btn">&times;</button>
+        </div>
+
+        <!-- Modal Instructions Content -->
+        <div class="modal-body">
+          
+          <div class="instruction-step">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <h4>ALERT & REPORT</h4>
+              <p>Immediately activate the nearest fire alarm pull station. Once safe, call emergency services or campus security to report the exact location and size of the fire.</p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <h4>EVACUATE IMMEDIATELY</h4>
+              <p>Leave the building using the nearest emergency exit stairs. <strong>Never use elevators</strong> during a fire. Close all doors behind you to slow down the spread of smoke.</p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <h4>STAY LOW & ASSEMBLE</h4>
+              <p>If caught in heavy smoke, drop down and crawl on your hands and knees where the air is cleaner. Once outside, gather at your designated campus assembly area.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="earthquakeModal" class="modal-overlay">
+      <div class="modal-window">
+        
+        <div class="modal-header">
+          <h2 class="modal-title">Earthquake Protocol</h2>
+          <button type="button" id="closeEarthquakeModalBtn" class="modal-close-btn">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          
+          <div class="instruction-step">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <h4>DUCK, COVER, & HOLD</h4>
+              <p>Immediately drop to the floor on your hands and knees. Take cover under a sturdy desk or table, and hold on tight until the shaking completely stops.</p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <h4>STAY INSIDE & PROTECT</h4>
+              <p>Do not run outside or use doorways while the ground is moving. Stay away from windows, glass partitions, hanging light fixtures, or heavy display cabinets that could tip over.</p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <h4>EVACUATE WHEN CLEAR</h4>
+              <p>Once the shaking subsides, check yourself for injuries, grab your essentials, and carefully evacuate via the stairs to an open outdoor assembly zone. Be prepared for aftershocks.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="medicalModal" class="modal-overlay">
+      <div class="modal-window">
+        
+        <div class="modal-header">
+          <h2 class="modal-title">Medical Emergency Protocol</h2>
+          <button type="button" id="closeMedicalModalBtn" class="modal-close-btn">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          
+          <div class="instruction-step">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <h4>ASSESS & CALL</h4>
+              <p>Ensure the scene is safe before approaching. Immediately call emergency medical services or your school health clinic with your exact location and a description of the victim's symptoms.</p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <h4>FIRST AID & CARE</h4>
+              <p>If trained, administer basic first aid or CPR if necessary. Do not move the injured individual unless they are in immediate danger from their surroundings (e.g., fire or structural collapse).</p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <h4>GUIDE THE RESPONDERS</h4>
+              <p>Stay with the victim and keep them calm. Have a peer wait near the main entrance or driveway to flag down arriving medical responders and direct them to your exact room.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="floodModal" class="modal-overlay">
+      <div class="modal-window">
+        
+        <div class="modal-header">
+          <h2 class="modal-title">Flood & Typhoon Protocol</h2>
+          <button type="button" id="closeFloodModalBtn" class="modal-close-btn">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          
+          <div class="instruction-step">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <h4>MONITOR & PREPARE</h4>
+              <p>Stay tuned to weather advisories (PAGASA/local news) and school suspension announcements. Elevate sensitive equipment or documents, and ensure emergency power banks/communication devices are fully charged.</p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <h4>SEEK HIGHER GROUND</h4>
+              <p>If water levels begin to rise rapidly inside the campus, calmly move up to the higher floors of your building. Avoid basements, ground-floor parking zones, and open courtyard structures.</p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <h4>EVACUATE SAFELY</h4>
+              <p>If evacuation is required, follow authorized paths to designated shelters. <strong>Never attempt to wade or swim through floodwaters</strong> due to hidden debris, open manholes, or electric shock hazards.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="evacuationModal" class="modal-overlay">
+      <div class="modal-window">
+        
+        <div class="modal-header">
+          <h2 class="modal-title">Evacuation Protocol</h2>
+          <button type="button" id="closeEvacuationModalBtn" class="modal-close-btn">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          
+          <div class="instruction-step">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <h4>LISTEN FOR SIGNALS</h4>
+              <p>Pay close attention to alarm sirens, public address systems, or instructions given by building floor marshals. Stop what you are doing immediately when an evacuation order is issued.</p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <h4>MOVE ORDERLY</h4>
+              <p>Exit the room in a single-file line without rushing, pushing, or running. Leave heavy personal belongings or large bags behind, but ensure you keep your smartphone and school ID on hand.</p>
+            </div>
+          </div>
+
+          <div class="instruction-step">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <h4>REPORT TO ASSEMBLY ZONE</h4>
+              <p>Follow the directional green evacuation route maps posted in the corridors. Walk directly to your designated outdoor assembly zone and stay with your group for headcount verification.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="config.js"></script>
+  <script src="SULO.js"></script>
+
+</body>
+</html>

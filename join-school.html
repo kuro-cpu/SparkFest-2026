@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Join School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="SULO.css">
+</head>
+<body>
+
+  <main class="app-container join-school-screen">
+    <div class="join-content-wrapper">
+      
+      <!-- Split-Color Header -->
+      <h1 class="join-heading">
+        <span class="text-yellow">Join</span><br>
+        <span class="text-orange">School</span>
+      </h1>
+
+      <p class="join-description">
+        Enter your student number from your current school or institution:
+      </p>
+
+      <form id="joinSchoolForm" class="join-form" novalidate>
+        <div class="field-group">
+          <input
+            type="text"
+            class="input-field dynamic-input"
+            id="studentNumber"
+            name="studentNumber"
+            placeholder="Student Number"
+          >
+        </div>
+
+        <button type="submit" class="primary-btn wide-btn" id="sendCodeBtn">Send Code</button>
+      </form>
+
+    </div>
+  </main>
+  
+  <script src="config.js"></script>
+  <script src="SULO.js"></script>
+
+</body>
+</html>

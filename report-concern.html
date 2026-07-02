@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Report A Concern</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="SULO.css">
+</head>
+<body>
+
+  <header class="report-header">
+    <a href="home.html" class="back-arrow-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </a>
+    <h1 class="header-title">Report A Concern</h1>
+  </header>
+
+  <main class="app-container report-screen-container">
+    
+    <div id="reportFormState" class="report-view-state">
+      <form id="concernForm" novalidate>
+        
+        <label class="report-label">Text description</label>
+        <div class="field-group">
+          <textarea class="report-textarea" id="concernText" placeholder="Describe what happened..." required></textarea>
+        </div>
+
+        <label class="report-label">Upload your Evidence here: *Optional*</label>
+        <div class="evidence-upload-row">
+          
+          <label class="evidence-box">
+            <input type="file" accept="image/*" multiple style="display: none;">
+            <div class="evidence-icon">📷</div>
+            <p class="evidence-text">Upload image or screenshot here (0/15)</p>
+          </label>
+
+          <label class="evidence-box">
+            <input type="file" accept="video/*" multiple style="display: none;">
+            <div class="evidence-icon">📹</div>
+            <p class="evidence-text">Upload video here (0/8)</p>
+          </label>
+          
+        </div>
+
+        <button type="submit" class="primary-btn wide-btn report-submit-btn">Submit</button>
+      </form>
+    </div>
+
+    <div id="reportSuccessState" class="report-view-state screen-hidden">
+      <div class="success-content-wrapper">
+        
+        <div class="success-checkmark-circle">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+
+        <h2 class="success-title">Report Submitted!</h2>
+        
+        <p class="success-description">
+          Thank you for helping keep your school safe. Your report has been securely sent to your school's guidance office.
+        </p>
+
+        <div class="anonymous-notice-badge">
+          <span class="badge-icon">👍</span>
+          <p class="badge-text">Don't worry, your identity remains anonymous.</p>
+        </div>
+
+        <button type="button" id="backToHomeBtn" class="primary-btn wide-btn success-home-btn">Back to Home</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="config.js"></script>
+  <script src="SULO.js"></script>
+  
+</body>
+</html>

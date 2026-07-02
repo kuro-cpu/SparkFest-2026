@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Register School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="SULO.css">
+</head>
+<body>
+
+  <main class="app-container register-school-screen">
+    <div class="register-content-wrapper">
+      
+      <h1 class="register-heading">
+        <span class="text-yellow">Register</span><br>
+        <span class="text-orange">School</span>
+      </h1>
+
+      <p class="register-description">
+        When clicking the “Register School” button, you must complete an application.
+      </p>
+      
+      <hr class="yellow-divider">
+
+      <form id="registerSchoolForm" class="register-form" novalidate>
+        
+        <h2 class="section-title">School Information</h2>
+        
+        <div class="field-group">
+          <input type="text" class="input-field basic-input" name="schoolName" placeholder="School Name">
+        </div>
+        <div class="field-group">
+          <input type="text" class="input-field basic-input" name="schoolAddress" placeholder="School Address">
+        </div>
+        <div class="field-group">
+          <input type="text" class="input-field basic-input" name="regionProvince" placeholder="Region/Province">
+        </div>
+
+        <div class="form-row flex-row">
+          <span class="row-label">School Type</span>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="schoolType" value="public">
+              <span class="custom-radio"></span> Public
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="schoolType" value="private">
+              <span class="custom-radio"></span> Private
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row flex-row">
+          <span class="row-label">School Level</span>
+          <div class="select-wrapper">
+            <select name="schoolLevel" class="dropdown-select">
+              <option value="" disabled selected></option>
+              <option value="elementary">Primary / Elementary</option>
+              <option value="highschool">Junior / Senior High School</option>
+              <option value="university">College / University</option>
+            </select>
+          </div>
+        </div>
+
+
+        <h2 class="section-title">Administrator Information</h2>
+        
+        <div class="field-group">
+          <input type="text" class="input-field basic-input" name="adminFullName" placeholder="Full Name">
+        </div>
+
+        <div class="form-row flex-row">
+          <span class="row-label">Position</span>
+          <div class="select-wrapper">
+            <select name="adminPosition" class="dropdown-select">
+              <option value="" disabled selected></option>
+              <option value="principal">Principal</option>
+              <option value="director">Director</option>
+              <option value="registrar">Registrar</option>
+              <option value="it_admin">IT Administrator</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <input type="email" class="input-field basic-input" name="adminEmail" placeholder="School Email Address">
+        </div>
+        <div class="field-group">
+          <input type="tel" class="input-field basic-input" name="adminContact" placeholder="Contact Number">
+        </div>
+
+
+        <h2 class="section-title">Verification Documents    *Optional*</h2>
+        
+        <div class="upload-row">
+          <label class="upload-btn">
+            Upload
+            <input type="file" name="docProofOfEmployment" accept=".pdf,.jpg,.jpeg,.png">
+          </label>
+          <span class="upload-label">Proof of Employment (ID)</span>
+        </div>
+
+        <div class="upload-row">
+          <label class="upload-btn">
+            Upload
+            <input type="file" name="docSchoolId" accept=".pdf,.jpg,.jpeg,.png">
+          </label>
+          <span class="upload-label">School ID</span>
+        </div>
+
+        <div class="upload-row">
+          <label class="upload-btn">
+            Upload
+            <input type="file" name="docLetterOfAuthorization" accept=".pdf,.jpg,.jpeg,.png">
+          </label>
+          <span class="upload-label">Letter of Authorization</span>
+        </div>
+
+        <p class="upload-note">
+          Note: the size of the file (Standard PDF, JPG, PNG) must be limited to 10MB
+        </p>
+
+
+        <h2 class="section-title">Add Email Accounts from your:    *Optional*</h2>
+        
+        <div class="field-group text-group-wrapper">
+          <label class="field-sublabel">Guidance Counselor</label>
+          <input type="email" class="input-field basic-input" name="emailGuidance" placeholder="Email Account">
+        </div>
+
+        <div class="field-group text-group-wrapper">
+          <div class="flex-row-space">
+            <label class="field-sublabel">Teacher / Instructor</label>
+            <a href="#" class="add-field-link" id="addTeacherField">Add Field</a>
+          </div>
+          <input type="email" class="input-field basic-input" name="emailTeacher" placeholder="Email Account">
+        </div>
+
+        <div class="field-group text-group-wrapper">
+          <label class="field-sublabel">Vice Principal</label>
+          <input type="email" class="input-field basic-input" name="emailVicePrincipal" placeholder="Email Account">
+        </div>
+
+
+        <button type="submit" class="primary-btn submit-registration-btn">Submit</button>
+
+      </form>
+    </div>
+  </main> 
+
+  <script src="config.js"></script>
+  <script src="SULO.js"></script>
+
+</body>
+</html>

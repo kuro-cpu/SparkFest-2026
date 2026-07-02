@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="SULO.css">
+</head>
+<body>
+
+  <main class="app-container">
+
+    <header class="blob-header">
+      <svg class="blob-svg" viewBox="0 0 856 440" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"  stop-color="#FFD65C"/>
+            <stop offset="30%" stop-color="#FFC107"/>
+            <stop offset="65%" stop-color="#FCA000"/>
+            <stop offset="100%" stop-color="#F57C00"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#blobGradient)" d="M0,0 L270,0 L275,1 L280,2 L285,4 L290,6 L295,7 L300,8 L305,10 L310,11 L315,13 L320,14 L325,16 L330,17 L335,19 L340,20 L345,22 L350,24 L355,27 L360,29 L365,32 L370,36 L375,39 L380,43 L385,45 L390,50 L395,54 L400,57 L405,62 L410,66 L415,71 L420,76 L425,82 L430,87 L435,94 L440,100 L445,107 L450,114 L455,121 L460,132 L465,140 L470,151 L475,163 L480,177 L485,195 L490,231 L490,251 L485,277 L480,291 L475,299 L470,306 L465,312 L460,318 L455,321 L450,326 L445,328 L440,330 L435,331 L430,332 L425,334 L420,334 L415,335 L410,335 L405,336 L400,336 L395,336 L390,336 L385,337 L380,336 L375,336 L370,336 L365,336 L360,336 L355,336 L350,335 L345,336 L340,335 L335,335 L330,335 L325,335 L320,334 L315,335 L310,334 L305,334 L300,334 L295,334 L290,333 L285,333 L280,333 L275,332 L270,332 L265,332 L260,332 L255,331 L250,331 L245,331 L240,331 L235,330 L230,329 L225,330 L220,330 L215,329 L210,328 L205,329 L200,328 L195,329 L190,330 L185,332 L180,333 L175,336 L170,339 L165,342 L160,345 L155,350 L150,354 L145,358 L140,363 L135,368 L130,373 L125,378 L120,383 L115,387 L110,391 L105,395 L100,398 L95,400 L90,402 L85,404 L80,406 L75,407 L70,408 L65,409 L60,411 L55,412 L50,411 L45,412 L40,412 L35,412 L30,412 L25,411 L20,409 L15,407 L10,406 L5,403 L0,401 Z" />
+      </svg>
+
+      <div class="header-text">
+        <p class="eyebrow-text">Hello,</p>
+        <h1 class="headline-text">Sign Up!</h1>
+      </div>
+    </header>
+
+    <form class="app-form" id="signupForm" novalidate>
+
+      <div class="field-group name-row">
+        <input
+          type="text"
+          class="input-field"
+          id="firstName"
+          name="firstName"
+          placeholder="First Name"
+          autocomplete="given-name"
+        >
+        <input
+          type="text"
+          class="input-field"
+          id="lastName"
+          name="lastName"
+          placeholder="Last Name"
+          autocomplete="family-name"
+        >
+      </div>
+
+      <div class="field-group">
+        <input
+          type="text"
+          class="input-field"
+          id="username"
+          name="username"
+          placeholder="User ID (8 characters)"
+          autocomplete="username"
+          maxlength="8" 
+        >
+      </div>
+
+      <div class="field-group">
+        <input
+          type="password"
+          class="input-field"
+          id="password"
+          name="password"
+          placeholder="Password"
+          autocomplete="new-password"
+        >
+      </div>
+
+      <div class="field-group">
+        <input
+          type="password"
+          class="input-field"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          autocomplete="new-password"
+        >
+      </div>
+
+      <button type="submit" class="primary-btn" id="createAccountBtn">Create Account</button>
+      <p class="switch-text">
+        Already have an account? <a href="login.html" class="switch-link">Log in!</a>
+      </p>
+
+      <p class="terms-text">
+        By clicking continue, you agree to our
+        <a href="#" class="terms-link">Terms of Service</a>
+        and
+        <a href="#" class="terms-link">Privacy Policy</a>
+      </p>
+
+    </form>
+
+  </main>
+
+  <script src="config.js"></script>
+  <script src="SULO.js"></script>
+
+</body>
+</html>

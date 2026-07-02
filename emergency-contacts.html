@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Contacts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="SULO.css">
+</head>
+<body class="desktop-bg-gray">
+
+  <!-- Centered Smartphone Container Window -->
+  <div class="phone-wrapper">
+    
+    <!-- Top space buffer above the header -->
+    <div class="status-bar-spacer"></div>
+
+    <!-- Exact Match Left-Aligned Header Block -->
+    <header class="report-header">
+      <a href="home.html" class="back-arrow-link">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </a>
+      <h1 class="header-title">Emergency Contacts</h1>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="contacts-screen-container">
+      
+      <p class="contacts-intro-text">
+        Please input all the telephone/mobile numbers in every field
+      </p>
+
+      <form id="emergencyContactsForm" novalidate>
+        
+        <!-- Field 1: School Hotline -->
+        <div class="contact-field-group">
+          <div class="field-label-row">
+            <label class="field-label">School Hotline</label>
+            <span class="add-field-btn">Add Field</span>
+          </div>
+          <div class="input-container-box">
+            <div class="input-icon-prefix">
+              <!-- Custom Ringing Smartphone Icon SVG -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fca311" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                <path d="M22 8a5 5 0 0 1 0 8"></path>
+                <path d="M19 10a2.5 2.5 0 0 1 0 4"></path>
+              </svg>
+            </div>
+            <div class="vertical-divider"></div>
+            <input type="tel" id="schoolHotlineInput" class="contact-input" placeholder="e.g., +63 9...">
+          </div>
+        </div>
+
+        <!-- Field 2: Guidance Office -->
+        <div class="contact-field-group">
+          <div class="field-label-row">
+            <label class="field-label">Guidance Office</label>
+            <span class="add-field-btn">Add Field</span>
+          </div>
+          <div class="input-container-box">
+            <div class="input-icon-prefix">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fca311" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                <path d="M22 8a5 5 0 0 1 0 8"></path>
+                <path d="M19 10a2.5 2.5 0 0 1 0 4"></path>
+              </svg>
+            </div>
+            <div class="vertical-divider"></div>
+            <input type="tel" id="guidanceOfficeInput" class="contact-input" placeholder="e.g., +63 9...">
+          </div>
+        </div>
+
+        <!-- Field 3: Local Police -->
+        <div class="contact-field-group">
+          <div class="field-label-row">
+            <label class="field-label">Local Police</label>
+            <span class="add-field-btn">Add Field</span>
+          </div>
+          <div class="input-container-box">
+            <div class="input-icon-prefix">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fca311" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                <path d="M22 8a5 5 0 0 1 0 8"></path>
+                <path d="M19 10a2.5 2.5 0 0 1 0 4"></path>
+              </svg>
+            </div>
+            <div class="vertical-divider"></div>
+            <input type="tel" id="localPoliceInput" class="contact-input" placeholder="e.g., +63 9...">
+          </div>
+        </div>
+
+        <!-- Field 4: Emergency Numbers -->
+        <div class="contact-field-group">
+          <div class="field-label-row">
+            <label class="field-label">Emergency Numbers</label>
+            <span class="add-field-btn">Add Field</span>
+          </div>
+          <div class="input-container-box">
+            <div class="input-icon-prefix">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fca311" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                <path d="M22 8a5 5 0 0 1 0 8"></path>
+                <path d="M19 10a2.5 2.5 0 0 1 0 4"></path>
+              </svg>
+            </div>
+            <div class="vertical-divider"></div>
+            <input type="tel" id="emergencyNumbersInput" class="contact-input" placeholder="e.g., +63 9...">
+          </div>
+        </div>
+
+        <!-- Save Button Block -->
+        <button type="submit" class="contacts-save-btn">Save</button>
+
+      </form>
+    </main>
+
+    <div id="saveToast" class="toast-notification">💾 Contacts saved successfully!</div>
+
+  </div>
+
+  <script src="config.js"></script>
+  <script src="SULO.js"></script>
+
+</body>
+</html>

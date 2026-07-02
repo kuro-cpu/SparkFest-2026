@@ -1,0 +1,6 @@
+# Ignore environment and configuration files
+.env
+config.js
+
+# Ignore system files (optional, but good practice)
+.DS_Store
