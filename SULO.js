@@ -236,9 +236,9 @@ if (loginForm) {
     
     // Check if we are on the AI chat page
     if (chatContainer && userInputField) {
-        const GEMINI_API_KEY = "PASTE_YOUR_API_KEY_HERE";
-        const MODEL_NAME = "gemini-3-flash-preview"; // Fixed invalid model name
-        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${GEMINI_API_KEY}`;
+        const GEMINI_API_KEY = "AQ.Ab8RN6IQTT-boqpbRvXL81Lc_yl6zYuHNYbC_JpPwtVtxNBC_Q";
+        const MODEL_NAME = "gemini-1.5-flash"; // Fixed invalid model name
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${GEMINI_API_KEY}`;
 
         // Initial Greeting Message
         setTimeout(() => {
