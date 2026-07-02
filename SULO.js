@@ -74,19 +74,26 @@ if (loginForm) {
 
         const usernameInput = document.getElementById('username').value.trim();
         const passwordInput = document.getElementById('password').value;
-        const savedAccounts = JSON.parse(localStorage.getItem('databaseAccounts')) || [];
 
-        // Check for either 'username' (new) OR 'userID' (old data)
+        // THE HACKATHON BYPASS:
+        if (usernameInput === "UserDemo" && passwordInput === "password123") {
+            console.log("Master bypass triggered!");
+            localStorage.setItem('currentUser', JSON.stringify({ firstName: "Spark", lastName: "Fest" }));
+            window.location.href = 'home.html';
+            return;
+        }
+
+        // Standard Database Login (Keep this as a backup)
+        const savedAccounts = JSON.parse(localStorage.getItem('databaseAccounts')) || [];
         const matchedUser = savedAccounts.find(account => 
-            (account.username === usernameInput || account.userID === usernameInput) && 
-            account.password === passwordInput
+            account.username === usernameInput && account.password === passwordInput
         );
 
-        if (!matchedUser) {
-    const saved = localStorage.getItem('databaseAccounts');
-    alert("Debug Info:\nInput: " + usernameInput + "\nDatabase: " + saved);
-} else {
-            alert("Invalid User ID or Password. Please try again.");
+        if (matchedUser) {
+            localStorage.setItem('currentUser', JSON.stringify(matchedUser));
+            window.location.href = 'home.html';
+        } else {
+            alert("Invalid User ID or Password.");
         }
     });
 }
