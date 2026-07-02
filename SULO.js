@@ -1,20 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const savedAccounts = localStorage.getItem('databaseAccounts');
+    // 1. Define the function
+    function ensureDemoAccount() {
+        let accounts = JSON.parse(localStorage.getItem('databaseAccounts')) || [];
+        const demoExists = accounts.find(acc => acc.username === "UserDemo");
 
-if (!localStorage.getItem('databaseAccounts')) {
-    const demoAccount = [{
-        firstName: "Spark",
-        lastName: "Fest",
-        username: "UserDemo",
-        password: "password123"
-    }];
-    localStorage.setItem('databaseAccounts', JSON.stringify(demoAccount));
-    console.log("Database seeded with 'username' correctly.");
-}
-else {
-    console.log("Database already exists. Skipping seed.");
-}
+        if (!demoExists) {
+            accounts.push({
+                firstName: "Spark",
+                lastName: "Fest",
+                username: "UserDemo",
+                password: "password123"
+            });
+            localStorage.setItem('databaseAccounts', JSON.stringify(accounts));
+            console.log("Demo account injected successfully.");
+        }
+    }
+
+    ensureDemoAccount();
     // ==========================================
     // 1. SIGN UP SYSTEM LOGIC
     // ==========================================
