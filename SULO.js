@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (matchedUser) {
                 localStorage.setItem('currentUser', JSON.stringify(matchedUser));
                 alert(`Welcome back, ${matchedUser.firstName}!`);
-                window.location.href = 'index.html';
+                window.location.href = 'home.html';
             } else {
                 alert("Invalid User ID or Password. Please try again.");
             }

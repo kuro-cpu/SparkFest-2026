@@ -3,93 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>SULO - Dashboard</title>
+  <title>Log In</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="SULO.css">
 </head>
 <body>
 
-  <main class="app-container dashboard-container">
-    
-    <header class="dashboard-hero">
-      <button class="settings-btn" aria-label="Settings">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="#FCA000">
-          <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
-        </svg>
-      </button>
+  <main class="app-container">
 
-      <div class="profile-row">
-        <div class="profile-avatar-wrapper">
-          <div class="avatar-placeholder"></div>
-        </div>
-        <div class="greeting-text-container">
-          <p class="greeting-sub">Magandang araw,</p>
-          <h1 class="greeting-name" id="dashboardGreetingName">Akito!</h1>
-        </div>
+    <header class="blob-header">
+      <svg class="blob-svg" viewBox="0 0 856 440" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"  stop-color="#FFD65C"/>
+            <stop offset="30%" stop-color="#FFC107"/>
+            <stop offset="65%" stop-color="#FCA000"/>
+            <stop offset="100%" stop-color="#F57C00"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#blobGradient)" d="M0,0 L270,0 L275,1 L280,2 L285,4 L290,6 L295,7 L300,8 L305,10 L310,11 L315,13 L320,14 L325,16 L330,17 L335,19 L340,20 L345,22 L350,24 L355,27 L360,29 L365,32 L370,36 L375,39 L380,43 L385,45 L390,50 L395,54 L400,57 L405,62 L410,66 L415,71 L420,76 L425,82 L430,87 L435,94 L440,100 L445,107 L450,114 L455,121 L460,132 L465,140 L470,151 L475,163 L480,177 L485,195 L490,231 L490,251 L485,277 L480,291 L475,299 L470,306 L465,312 L460,318 L455,321 L450,326 L445,328 L440,330 L435,331 L430,332 L425,334 L420,334 L415,335 L410,335 L405,336 L400,336 L395,336 L390,336 L385,337 L380,336 L375,336 L370,336 L365,336 L360,336 L355,336 L350,335 L345,336 L340,335 L335,335 L330,335 L325,335 L320,334 L315,335 L310,334 L305,334 L300,334 L295,334 L290,333 L285,333 L280,333 L275,332 L270,332 L265,332 L260,332 L255,331 L250,331 L245,331 L240,331 L235,330 L230,329 L225,330 L220,330 L215,329 L210,328 L205,329 L200,328 L195,329 L190,330 L185,332 L180,333 L175,336 L170,339 L165,342 L160,345 L155,350 L150,354 L145,358 L140,363 L135,368 L130,373 L125,378 L120,383 L115,387 L110,391 L105,395 L100,398 L95,400 L90,402 L85,404 L80,406 L75,407 L70,408 L65,409 L60,411 L55,412 L50,411 L45,412 L40,412 L35,412 L30,412 L25,411 L20,409 L15,407 L10,406 L5,403 L0,401 Z" />
+      </svg>
+
+      <div class="header-text">
+        <p class="eyebrow-text">Welcome Back,</p>
+        <h1 class="headline-text">Log In!</h1>
       </div>
     </header>
 
-    <section class="search-section">
-      <div class="search-bar-wrapper">
-        <span class="search-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="#A0A0A0">
-            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-          </svg>
-        </span>
-        <input type="text" class="dashboard-search" placeholder="Search">
+    <!-- Login form -->
+    <form class="app-form" id="loginForm" novalidate>
+
+      <div class="field-group">
+        <input
+          type="text"
+          class="input-field"
+          id="username"
+          name="username"
+          placeholder="User ID"
+          autocomplete="username"
+        >
       </div>
-    </section>
 
-    <section class="menu-cards-stack">
-      <a href="report-concern.html" class="menu-card" style="text-decoration: none; color: inherit;">
-    <div class="card-icon-box">
-      <img src="tracking.png" alt="Report" class="card-img-icon">
-    </div>
-    <div class="card-details">
-      <h3 class="card-title">Report A Concern</h3>
-      <p class="card-subtitle">Submit incident alerts</p>
-    </div>
-  </a>
-
-      <a href="Gemini-ai.html" class="menu-card" style="text-decoration: none; color: inherit;">
-  <div class="card-icon-box">
-    <img src="gemini-color.png" alt="Gemini" class="card-img-icon">
-  </div>
-  <div class="card-details">
-    <h3 class="card-title">Ask Gemini</h3>
-    <p class="card-subtitle">Get instant guidelines</p>
-  </div>
-</div>
-
-      <a href="safety-resources.html" class="menu-card" style="text-decoration: none; color: inherit;">
-  <div class="card-icon-box">
-    <img src="shield.png" alt="Safety Resources" class="card-img-icon">
-  </div>
-  <div class="card-details">
-    <h3 class="card-title">Safety Resources</h3>
-    <p class="card-subtitle">Browse educational guides</p>
-  </div>
-</a>
-
-      <a href="emergency-contacts.html" class="menu-card" style="text-decoration: none; color: inherit;">
-  <div class="card-icon-box">
-    <img src="emergency-call.png" alt="Emergency Contacts" class="card-img-icon">
-  </div>
-  <div class="card-details">
-    <h3 class="card-title">Emergency Contacts</h3>
-    <p class="card-subtitle">Call important hotlines</p>
-  </div>
-</a>
-</div>
+      <div class="field-group">
+        <input
+          type="password"
+          class="input-field"
+          id="password"
+          name="password"
+          placeholder="Password"
+          autocomplete="current-password"
+        >
       </div>
-    </section>
+
+      <button type="submit" class="primary-btn" id="loginBtn">Log In</button>
+
+      <p class="switch-text">
+        Don't have an account yet? <a href="signup.html" class="switch-link">Sign up!</a>
+      </p>
+
+      <p class="terms-text">
+        By clicking continue, you agree to our
+        <a href="#" class="terms-link">Terms of Service</a>
+        and
+        <a href="#" class="terms-link">Privacy Policy</a>
+      </p>
+
+    </form>
 
   </main>
 
   <script src="config.js"></script>
   <script src="SULO.js"></script>
-  
+
 </body>
 </html>
