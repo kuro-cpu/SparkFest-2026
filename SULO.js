@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    if (!localStorage.getItem('databaseAccounts')) {
+    const savedAccounts = localStorage.getItem('databaseAccounts');
+
+if (!localStorage.getItem('databaseAccounts')) {
     const demoAccount = [{
         firstName: "Spark",
         lastName: "Fest",
@@ -8,7 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
         password: "password123"
     }];
     localStorage.setItem('databaseAccounts', JSON.stringify(demoAccount));
-    console.log("Database seeded with demo account.");
+    console.log("Database seeded with 'username' correctly.");
+}
+else {
+    console.log("Database already exists. Skipping seed.");
 }
     // ==========================================
     // 1. SIGN UP SYSTEM LOGIC
@@ -60,28 +65,33 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. LOG IN SYSTEM LOGIC
     // ==========================================
     const loginForm = document.getElementById('loginForm');
-    if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-            const usernameInput = document.getElementById('username').value.trim();
-            const passwordInput = document.getElementById('password').value;
+        const usernameInput = document.getElementById('username').value.trim();
+        const passwordInput = document.getElementById('password').value; // Removed trim() if passwords have spaces
 
-            const savedAccounts = JSON.parse(localStorage.getItem('databaseAccounts')) || [];
+        const savedAccounts = JSON.parse(localStorage.getItem('databaseAccounts')) || [];
+        
+        // DEBUG: Print to console to see what we are comparing
+        console.log("Input Username:", usernameInput);
+        console.log("Input Password:", passwordInput);
+        console.log("Saved Accounts:", savedAccounts);
 
-            const matchedUser = savedAccounts.find(account => 
-                account.username === usernameInput && account.password === passwordInput
-            );
+        const matchedUser = savedAccounts.find(account => 
+            account.username === usernameInput && account.password === passwordInput
+        );
 
-            if (matchedUser) {
-                localStorage.setItem('currentUser', JSON.stringify(matchedUser));
-                alert(`Welcome back, ${matchedUser.firstName}!`);
-                window.location.href = 'home.html';
-            } else {
-                alert("Invalid User ID or Password. Please try again.");
-            }
-        });
-    }
+        if (matchedUser) {
+            localStorage.setItem('currentUser', JSON.stringify(matchedUser));
+            alert(`Welcome back, ${matchedUser.firstName}!`);
+            window.location.href = 'home.html';
+        } else {
+            alert(`Login Failed!\nInput User: ${usernameInput}\nInput Pass: ${passwordInput}\n\nCheck the Console (F12) to see if 'Saved Accounts' is empty.`);
+        }
+    });
+}
 
     // ==========================================
     // 3. JOIN & REGISTER SCHOOL LOGIC
