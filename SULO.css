@@ -15,6 +15,19 @@ html, body {
   background-color: #F5F5F5; /* Optional: adds a clean gray backdrop behind your mobile view */
 }
 
+body, html {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important;
+}
+
+.app-container, 
+.register-content-wrapper {
+    height: auto !important;       /* Removes the forced fixed height */
+    min-height: 100vh !important;  /* Keeps it at least the size of the screen */
+    overflow-y: visible !important; /* Allows the content to overflow and scroll */
+}
+
 .app-container {
   position: relative; /* This is the anchor */
   width: 375px;       /* Or whatever width your app is */
