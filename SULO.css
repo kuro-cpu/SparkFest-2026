@@ -16,13 +16,11 @@ html, body {
 }
 
 .app-container {
-  width: 100%;
-  max-width: 428px;
-  min-height: 100vh;
-  margin: 0 auto;
-  background: #ffffff;
-  position: relative;
-  overflow: hidden;
+  position: relative; /* This is the anchor */
+  width: 375px;       /* Or whatever width your app is */
+  height: 100vh;      /* Or your app's specific height */
+  overflow: hidden;   /* This clips the splash screen to the box */
+  margin: 0 auto;     /* Centers the app */
 }
 
 .blob-header {
@@ -1887,18 +1885,26 @@ body.gemini-view-body {
 }
 
 #splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999; /* Keeps it on top of everything */
-    background-color: white; /* Or match your logo background color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeOut 1s ease-in-out forwards;
-    animation-delay: 2s; /* The logo stays for 2 seconds before fading */
+  position: absolute; /* This anchors it to the .app-container */
+  top: 0;
+  left: 0;
+  width: 100%;       /* Fills the 375px width */
+  height: 100%;      /* Fills the 100vh height */
+  z-index: 9999;     /* Stays on top of everything inside the box */
+  background-color: white; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Animation */
+  animation: fadeOut 1s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+#splash-screen img {
+  width: 100%;       /* Or 'contain' if you don't want it cropped */
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the 375x100vh space */
 }
 
 @keyframes fadeOut {
