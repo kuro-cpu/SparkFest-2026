@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    if (!localStorage.getItem('databaseAccounts')) {
+    const demoAccount = [{
+        firstName: "Spark",
+        lastName: "Fest",
+        username: "UserDemo",
+        password: "password123"
+    }];
+    localStorage.setItem('databaseAccounts', JSON.stringify(demoAccount));
+    console.log("Database seeded with demo account.");
+}
     // ==========================================
     // 1. SIGN UP SYSTEM LOGIC
     // ==========================================
