@@ -38,6 +38,7 @@ DEMO LOGIN
 We have provided a demo account for judges to explore SULO without needing to register a new user:
 * **Username/User ID:** UserDemo
 * **Password:** password123
+* **For school to join:** SULO-2026
 
 SETTING UP GEMINI API KEY
 To enable the AI chat features in SULO, you need to provide your own Gemini API key:
