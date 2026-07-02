@@ -38,3 +38,15 @@ DEMO LOGIN
 We have provided a demo account for judges to explore SULO without needing to register a new user:
 * **Username/User ID:** UserDemo
 * **Password:** password123
+* **For school to join:** SULO-2026
+
+SETTING UP GEMINI API KEY
+To enable the AI chat features in SULO, you need to provide your own Gemini API key:
+
+Create a file named config.js in the project's root folder.
+
+Add your API key to the file by pasting the following line and replacing YOUR_API_KEY_HERE with your actual key:
+
+JavaScript:
+const GEMINI_API_KEY = "YOUR_API_KEY_HERE";
+Save the file. The application will automatically detect this file and connect to the Gemini API.
