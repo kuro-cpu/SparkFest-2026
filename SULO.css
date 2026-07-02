@@ -9,14 +9,12 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden; /* Stops any unwanted side-to-side page shaking */
-  background-color: #F5F5F5; /* Optional: adds a clean gray backdrop behind your mobile view */
+  height: 100vh; /* Lock the page to the viewport */
+  overflow: hidden; /* Prevent body scrolling */
+  background-color: #F5F5F5;
 }
 
 body, html {
-    height: auto !important;
     min-height: 100vh !important;
     overflow-y: auto !important;
 }
@@ -32,7 +30,7 @@ body, html {
   position: relative; /* This is the anchor */
   width: 375px;       /* Or whatever width your app is */
   height: 100vh;      /* Or your app's specific height */
-  overflow: hidden;   /* This clips the splash screen to the box */
+  overflow-y: auto;   /* This clips the splash screen to the box */
   margin: 0 auto;     /* Centers the app */
 }
 
@@ -839,7 +837,6 @@ body, html {
   flex-direction: column;
   min-height: 100vh;    /* Allow the layout container to stretch down naturally */
   height: auto;         /* Remove any rigid fixed height locks */
-  overflow-x: hidden;   /* Keeps background decorative orbs safely clipped */
   
   padding: 0 !important; 
 }
@@ -1256,6 +1253,7 @@ body, html {
 .safety-screen-container {
   background-color: #f7f7f7;   /* Soft gray screen background matching your mockup */
   padding: 24px 16px;
+  overflow-y: auto;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -1672,6 +1670,7 @@ body, html {
 
 /* Chat Stream Box Container */
 .gemini-chat-stream {
+    width: 100%;
     padding-top: 20px; /* Moves the first message down */
     padding-left: 15px;
     padding-right: 15px;
@@ -1793,16 +1792,15 @@ body, html {
 
 /* Sticky Input Action Floating Footer Row */
 .gemini-input-container {
-    padding: 15px;
+    padding: 10px;
     background: white;
     border-top: 1px solid #eee;
     flex-shrink: 0; /* Prevents it from getting squished */
 }
 
 .gemini-input-pill-box {
-    display: flex;
-    align-items: flex-end; /* Keeps icons aligned to the bottom */
     padding: 5px 10px;
+    border-radius: 20px; /* Keeps it pill-shaped even when smaller */
 }
 
 .gemini-text-field {
@@ -1810,11 +1808,12 @@ body, html {
     border: none;
     outline: none;
     background: transparent;
-    padding: 10px;
+    padding: 8px;
+    font-size: 14px;
     font-family: inherit;
     resize: none; /* Disables the manual resize handle */
     overflow: hidden; /* Hides the scrollbar as it grows */
-    min-height: 40px; /* Base height */
+    min-height: 30px; /* Base height */
     max-height: 150px; /* Prevents it from taking up the whole screen */
     overflow-y: auto; /* Adds scrollbar only if it hits max-height */
 }
@@ -1822,11 +1821,13 @@ body, html {
 .input-icon-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   padding-right: 4px;
 }
 
 .input-icon-actions svg {
+  width: 16px; /* Shrinks the icons */
+  height: 16px;
   cursor: pointer;
   display: block;
 }
@@ -1841,11 +1842,10 @@ body.gemini-view-body {
   align-items: center;       /* Centers the phone vertically */
 }
 
-/* 2. Lock the phone frame dimensions so it doesn't stretch left-to-right */
 .gemini-view-body .phone-wrapper {
   position: relative;
   width: 375px;              /* Fixed smartphone width */
-  height: 812px;             /* Fixed smartphone height */
+  height: 700px;             /* Fixed smartphone height */
   background-color: #ffffff; /* Internal phone background stays crisp white */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Gives it a realistic mockup depth */
   border-radius: 32px;       /* Sleek modern rounded screen edges */

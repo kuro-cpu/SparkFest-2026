@@ -236,9 +236,23 @@ if (loginForm) {
     
     // Check if we are on the AI chat page
     if (chatContainer && userInputField) {
-        const GEMINI_API_KEY = "AQ.Ab8RN6IQTT-boqpbRvXL81Lc_yl6zYuHNYbC_JpPwtVtxNBC_Q";
-        const MODEL_NAME = "gemini-1.5-flash"; // Fixed invalid model name
-        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${GEMINI_API_KEY}`;
+        const GEMINI_API_KEY = "AQ.Ab8RN6IrcIcDUpZmTrwKhTBEzjmxrwNUHSz8cdpZdOXxyVSQlA";
+        const MODEL_NAME = "gemini-3-flash-review"; // Fixed invalid model name
+        const API_URL = `curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent" \
+  -H 'Content-Type: application/json' \
+  -H 'X-goog-api-key: AQ.Ab8RN6IrcIcDUpZmTrwKhTBEzjmxrwNUHSz8cdpZdOXxyVSQlA' \
+  -X POST \
+  -d '{
+    "contents": [
+      {
+        "parts": [
+          {
+            "text": "Explain how AI works in a few words"
+          }
+        ]
+      }
+    ]
+  }'`;
 
         // Initial Greeting Message
         setTimeout(() => {
