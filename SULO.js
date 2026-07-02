@@ -70,17 +70,13 @@ if (loginForm) {
         e.preventDefault();
 
         const usernameInput = document.getElementById('username').value.trim();
-        const passwordInput = document.getElementById('password').value; // Removed trim() if passwords have spaces
-
+        const passwordInput = document.getElementById('password').value;
         const savedAccounts = JSON.parse(localStorage.getItem('databaseAccounts')) || [];
-        
-        // DEBUG: Print to console to see what we are comparing
-        console.log("Input Username:", usernameInput);
-        console.log("Input Password:", passwordInput);
-        console.log("Saved Accounts:", savedAccounts);
 
+        // Check for either 'username' (new) OR 'userID' (old data)
         const matchedUser = savedAccounts.find(account => 
-            account.username === usernameInput && account.password === passwordInput
+            (account.username === usernameInput || account.userID === usernameInput) && 
+            account.password === passwordInput
         );
 
         if (matchedUser) {
@@ -88,7 +84,7 @@ if (loginForm) {
             alert(`Welcome back, ${matchedUser.firstName}!`);
             window.location.href = 'home.html';
         } else {
-            alert(`Login Failed!\nInput User: ${usernameInput}\nInput Pass: ${passwordInput}\n\nCheck the Console (F12) to see if 'Saved Accounts' is empty.`);
+            alert("Invalid User ID or Password. Please try again.");
         }
     });
 }
